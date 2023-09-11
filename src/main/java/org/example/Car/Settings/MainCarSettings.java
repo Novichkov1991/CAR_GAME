@@ -1,5 +1,7 @@
 package org.example.Car.Settings;
 
+import org.example.Car.Settings.Parts.Parts;
+
 import java.util.PrimitiveIterator;
 
 public class MainCarSettings {
@@ -32,9 +34,9 @@ public class MainCarSettings {
 
     @Override
     public String toString() {
-        return "MainCarSettings{" +
-                "nameCar='" + nameCar + '\'' +
+        return "(" +
+                "nameCar=" + nameCar + '\'' +
                 ", yearCar=" + yearCar +
-                '}';
+                ')';
     }
 }

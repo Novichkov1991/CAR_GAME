@@ -1,8 +1,10 @@
 package org.example.Car.Settings;
 
+import org.example.Car.Settings.Parts.Parts;
+
 import java.util.PrimitiveIterator;
 
-public class Kuzov {
+public class Kuzov extends Parts {
     private String nameKuzov;
     private int weightKuzov;
 
@@ -24,7 +26,8 @@ public class Kuzov {
     }
 
 
-    public Kuzov(String nameKuzov, int weightKuzov) {
+    public Kuzov(String nameKuzov, int weightKuzov, int iznos, int mainPower) {
+        super(iznos, mainPower);
         this.nameKuzov = nameKuzov;
         this.weightKuzov = weightKuzov;
     }
@@ -35,6 +38,8 @@ public class Kuzov {
         return "Kuzov{" +
                 "nameKuzov='" + nameKuzov + '\'' +
                 ", weightKuzov=" + weightKuzov +
+                ", iznos=" + iznos +
+                ", mainPower=" + mainPower +
                 '}';
     }
 }

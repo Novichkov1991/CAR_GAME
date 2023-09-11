@@ -1,8 +1,12 @@
 package org.example.Car.Settings;
 
-public class Engine {
+import org.example.Car.Settings.Parts.Parts;
+
+public class Engine extends Parts {
     private String nameEngine;
     private int powerEngine;
+
+
 
 
     public String getNameEngine() {
@@ -22,10 +26,13 @@ public class Engine {
     }
 
 
-    public Engine(String nameEngine, int powerEngine) {
+    public Engine(String nameEngine, int powerEngine, int iznos, int mainPower) {
+        super(iznos, mainPower);
         this.nameEngine = nameEngine;
         this.powerEngine = powerEngine;
     }
+
+
 
 
     @Override
@@ -33,6 +40,8 @@ public class Engine {
         return "Engine{" +
                 "nameEngine='" + nameEngine + '\'' +
                 ", powerEngine=" + powerEngine +
+                ", iznos=" + iznos +
+                ", mainPower=" + mainPower +
                 '}';
     }
 }

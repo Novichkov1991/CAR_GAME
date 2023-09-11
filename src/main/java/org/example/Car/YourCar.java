@@ -1,6 +1,7 @@
 package org.example.Car;
 
 import org.example.Car.Settings.*;
+import org.example.Car.Settings.Parts.Parts;
 
 public class YourCar {
     private MainCarSettings mainCarSettings;
@@ -8,6 +9,8 @@ public class YourCar {
     private Transmission transmission;
     private Kolesa kolesa;
     private Kuzov kuzov;
+
+
 
 
     public MainCarSettings getMainCarSettings() {
@@ -51,6 +54,18 @@ public class YourCar {
     }
 
 
+
+
+
+
+
+    public int getScore(){
+//        int score = getMainCarSettings().getYearCar() + getEngine().getPowerEngine() - getTransmission().getUseTransmission() + getKolesa().getSizeKolesa();
+        int score = ( ( getEngine().getMainPower() * getEngine().getPowerEngine() - getEngine().getIznos() ) + ( getTransmission().getMainPower() / getTransmission().getUseTransmission() - getTransmission().getIznos() ) + ( getKolesa().getMainPower() * getKolesa().getSizeKolesa() / getKolesa().getIznos() ) + ( getKuzov().getMainPower() / getKuzov().getIznos() ) )  / getKuzov().getWeightKuzov();
+        return score;
+    }
+
+
     public YourCar(MainCarSettings mainCarSettings, Engine engine, Transmission transmission, Kolesa kolesa, Kuzov kuzov) {
         this.mainCarSettings = mainCarSettings;
         this.engine = engine;
@@ -60,14 +75,22 @@ public class YourCar {
     }
 
 
+//    public YourCar() {
+//        this.mainCarSettings = null;
+//        this.engine = null;
+//        this.transmission = null;
+//        this.kolesa = null;
+//        this.kuzov = null;
+//    }
+
+
     @Override
     public String toString() {
-        return "YourCar{" +
-                "mainCarSettings=" + mainCarSettings +
-                ", engine=" + engine +
-                ", transmission=" + transmission +
-                ", kolesa=" + kolesa +
-                ", kuzov=" + kuzov +
-                '}';
+        return  "Основное " + mainCarSettings + ",\n" +
+                "Мотор " + engine + ",\n" +
+                "Трансмиссия " + transmission + ",\n" +
+                "Кодеса " + kolesa + ",\n" +
+                "Кузов " + kuzov + ".\n";
     }
+
 }

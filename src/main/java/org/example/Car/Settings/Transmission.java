@@ -1,6 +1,8 @@
 package org.example.Car.Settings;
 
-public class Transmission {
+import org.example.Car.Settings.Parts.Parts;
+
+public class Transmission extends Parts {
     private String nameTransmission;
     private int useTransmission;
 
@@ -22,10 +24,15 @@ public class Transmission {
     }
 
 
-    public Transmission(String nameTransmission, int useTransmission) {
+
+    public Transmission(String nameTransmission, int useTransmission, int iznos, int mainPower) {
+        super(iznos, mainPower);
         this.nameTransmission = nameTransmission;
         this.useTransmission = useTransmission;
     }
+
+
+
 
 
     @Override
@@ -33,6 +40,8 @@ public class Transmission {
         return "Transmission{" +
                 "nameTransmission='" + nameTransmission + '\'' +
                 ", useTransmission=" + useTransmission +
+                ", iznos=" + iznos +
+                ", mainPower=" + mainPower +
                 '}';
     }
 }
